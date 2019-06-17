@@ -24,6 +24,7 @@ with pyrs.Service() as serv:
         last = time.time()
         smoothing = 0.9
         fps_smooth = 30
+	num = 0
 
         while True:
 
@@ -46,5 +47,10 @@ with pyrs.Service() as serv:
             cv2.putText(cd, str(fps_smooth)[:4], (0, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 0))
 
             cv2.imshow('', cd)
+	    
+	    if cnt % 30 == 0:
+		num += 1
+            	cv2.imwrite('./save/c/c'+str(num)+'.jpg', c)
+	    	cv2.imwrite('./save/d/d'+str(num)+'.jpg', d)
             if cv2.waitKey(1) & 0xFF == ord('q'):
 		break

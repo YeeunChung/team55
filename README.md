@@ -1,10 +1,8 @@
 # team55, Polaris 3D
-2019 졸업 프로젝트 상반기팀
-1615075 허유경
-1615052 이원선
-1615066 정예은
-산학 프로젝트
-지도 교수님: 민동보 교수님
+* 2019 졸업 프로젝트 상반기팀
+* 1615075 허유경, 1615052 이원선, 1615066 정예은
+* 산학 프로젝트
+* 지도 교수님: 민동보 교수님
 ---
 ### 1. show_depth.py
 intel zr300 카메라를 사용하여 color image, depth image를 받아오고 저장하는 코드.
@@ -24,4 +22,4 @@ test(predict)를 위해 test dataset을 tfrecord 형식으로 바꿔주는 코�
 
 ---
 * 2-5는 tensorflow ver 1.13.1, python ver 2.7.16 기반으로 작성되었음.
-* https://github.com/Windaway/FCRN-Depth-Prediction-Tensorflow 을참고하여 작성하였음.
+* https://github.com/Windaway/FCRN-Depth-Prediction-Tensorflow 을 참고하여 작성하였음.

@@ -22,4 +22,4 @@ test(predict)를 위해 test dataset을 tfrecord 형식으로 바꿔주는 코�
 
 ---
 * 2-5는 tensorflow ver 1.13.1, python ver 2.7.16 기반으로 작성되었음.
-* https://github.com/Windaway/FCRN-Depth-Prediction-Tensorflow 을참고하여 작성하였음.
+* https://github.com/Windaway/FCRN-Depth-Prediction-Tensorflow 을 참고하여 작성하였음.

@@ -29,6 +29,14 @@ python opencv 사용.
 전체 dataset에 대하여 training dataset : validation dataset = 8 : 2로 random하게 나누어 저장해 주는코드.
 python 사용.
 
+### 8. makedata/reverse_c.py
+특정 폴더에 비어 있는 파일이 있는지 확인하는 코드.
+python 사용.
+
+### 9. makedata/matchcd.py
+c, d 폴더의 모든 파일명이 같은지 검사하는 코드.
+python 사용.
+
 ---
 * 2-5는 tensorflow ver 1.13.1, python ver 2.7.16 기반으로 작성되었음.
 * https://github.com/Windaway/FCRN-Depth-Prediction-Tensorflow 을 참고하여 작성하였음.

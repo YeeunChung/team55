@@ -37,6 +37,14 @@ python 사용.
 c, d 폴더의 모든 파일명이 같은지 검사하는 코드.
 python 사용.
 
+### 10. makedata/btow.py
+데이터 전처리 과정으로, 범위를 벗어난 검은 부분을 흰색으로통일시키는 코드.
+python 사용.
+
+### 11. makedata/opening.py
+흰 hole 부분을 채우는 코드.
+python 사용.
+ 
 ---
 * 2-5는 tensorflow ver 1.13.1, python ver 2.7.16 기반으로 작성되었음.
 * https://github.com/Windaway/FCRN-Depth-Prediction-Tensorflow 을 참고하여 작성하였음.

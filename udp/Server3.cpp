@@ -33,7 +33,6 @@ int main()
 // 클라이언트와 데이터 통신
  while(1)
 { 
-  cout << "start" << endl; 
  // 데이터 받기
   addrlen=sizeof(clientaddr);
   retval=recvfrom(sock,buf,BUFSIZE,0,(sockaddr*)&clientaddr,
@@ -42,11 +41,7 @@ int main()
   //받은 데이터 출력
   buf[retval]='\0';
   cout<<"[UDP/"<<inet_ntoa(clientaddr.sin_addr)<<":"
-        <<ntohs(clientaddr.sin_port)<<"] "<<buf<<endl;
- 
-  //데이터 보내기
-  //retval=sendto(sock,buf,retval,0,(sockaddr*)&clientaddr, sizeof(clientaddr));
-            //(소켓,보낼 데이터 주소,데이터 크기,0,목적지 주소, 소켓 주소 구조체 크기)
+        <<ntohs(clientaddr.sin_port)<<"] "<<buf<<endl; 
  }
  
  // 클라이언트 소켓 연결 종료

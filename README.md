@@ -15,7 +15,7 @@ FCRN 논문을 기반으로 작성된 training code.
 ### 3. gen_tfrecord.py
 training dataset과 validation dataset을 읽어와 tfrecord 형식으로 바꿔주는 코드.
 
-### 4. predict.py
+### 4. predict_test.py
 학습을 통해 만들어 낸 ckpt 파일을 통해 test하는 코드.
 
 ### 5. gen_predict.py
@@ -29,7 +29,7 @@ python opencv 사용.
 전체 dataset에 대하여 training dataset : validation dataset = 8 : 2로 random하게 나누어 저장해 주는코드.
 python 사용.
 
-### 8. makedata/reverse_c.py
+### 8. makedata/checknull.py
 특정 폴더에 비어 있는 파일이 있는지 확인하는 코드.
 python 사용.
 
@@ -43,6 +43,10 @@ python 사용.
 
 ### 11. makedata/opening.py
 흰 hole 부분을 채우는 코드.
+python 사용.
+
+### 12. makedata/reverse.py
+특정 폴더에 있는 이미지들을 색 반전시켜주는 코드.
 python 사용.
  
 ---

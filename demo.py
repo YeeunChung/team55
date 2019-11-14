@@ -1,4 +1,9 @@
-#-*-coding: utf-8 -*-
+
+# coding: utf-8
+
+# In[ ]:
+
+
 import argparse
 import os
 import numpy as np
@@ -17,7 +22,9 @@ def main():
     parser.add_argument('model_path', help='Converted parameters for the model')
     args = parser.parse_args()
 
-    cap = cv2.VideoCapture('nvcamerasrc sensor-id=0 fpsRange=\"1 30\" ! video/x-raw(memory:NVMM), width=(int)640, height=(int)480, format=(string)I420 ! nvvidconv ! video/x-raw, format=(string)BGRx ! videoconvert ! video/x-raw, format=(string)BGR ! appsink')
+    cap = cv2.VideoCapture(0)
+    cap.set(3, 640)
+    cap.set(4, 480)
     
     # Default input size
     height = 480
@@ -39,15 +46,10 @@ def main():
         saver = tf.train.Saver()
         saver.restore(sess, args.model_path)
         
-        path_dir = './STOP/'
-        file_list = os.listdir(path_dir)
-        f = open('./predict_timetest.txt', 'w')
-        
-        count_go = 150
-        count_stop = 0
-        for input in file_list:
-            start = time.time()
-            frame = Image.open(path_dir + input)
+        while True:
+            ret, frame = cap.read()
+            cv2.imshow("webcam", frame)
+
             # Read image
             img = frame
             img = np.array(img).astype('float32')
@@ -63,25 +65,17 @@ def main():
                 for j in range(100, 221):
                     if pred[i][j] < 1.0:
                         status = 'stop'
-                        count_go = count_go - 1
-                        count_stop = count_stop + 1
                         break
-            print("time : ", time.time() - start)
-            print(input + ': ' + status)
-            f.write(input + ': ' + status + '\n')
-
-    print('go ' + str(count_go) + '개')
-    print('stop ' + str(count_stop) + '개')
-
-    f.write('go ' + str(count_go) + '개\n')
-    f.write('stop ' + str(count_stop) + '개\n')
-    f.close() 
+            print(status)
+            
+            k = cv2.waitKey(1)
+            if k == 27:
+                break
+            
+        cap.release()
+        cv2.destroyAllWindows()
     os._exit(0)
 
 if __name__ == '__main__':
     main()
-
-        
-
-
 

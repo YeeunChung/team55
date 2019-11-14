@@ -16,7 +16,7 @@ FCRN 논문을 기반으로 작성된 training code.
 training dataset과 validation dataset을 읽어와 tfrecord 형식으로 바꿔주는 코드.
 
 ### 4. predict_test.py
-마트에서 테스트 시 사용함. 학습을 통해 만들어 낸 ckpt 파일을 통해 test하는 코드.
+마트에서 테스트 시 사용함. 학습을 통해 만들어 낸 ckpt 파일을 통해 test하는 코드.모델을 한 번만 불러옴.
 
 ### 5. gen_predict.py
 test(predict)를 위해 test dataset을 tfrecord 형식으로 바꿔주는 코드.
@@ -49,8 +49,8 @@ python 사용.
 특정 폴더에 있는 이미지들을 색 반전시켜주는 코드.
 python 사용.
 
-### 13. predict_test_quantity.py
-정량적 실험에서 사용함.
+### 14. demo.py
+웹캠을 이용한 데모 버전 predict 코드.
  
 ---
 * 2-5는 tensorflow ver 1.13.1, python ver 2.7.16 기반으로 작성되었음.
